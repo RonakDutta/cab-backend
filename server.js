@@ -27,7 +27,7 @@ let activeRide = null;
 const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:5173",
-  "YOUR_LIVE_FRONTEND_URL_HERE", // IMPORTANT: Replace with your live Netlify/Vercel URL
+  "https://trustndrive.netlify.app/", // IMPORTANT: Replace with your live Netlify/Vercel URL
 ];
 
 const corsOptions = {
@@ -155,7 +155,7 @@ app.post("/api/incoming-message", async (req, res) => {
       await client.messages.create({
         from: `whatsapp:${twilioPhoneNumber}`,
         to: customerNumber,
-        body: `Update from your driver: ${driverReply}`,
+        body: `${driverReply}`,
       });
       console.log(`Message forwarded to ${customerNumber}`);
     } else {
