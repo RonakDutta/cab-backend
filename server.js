@@ -27,7 +27,7 @@ let activeRide = null;
 const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:5173",
-  "https://trustndrive.netlify.app/", // IMPORTANT: Replace with your live Netlify/Vercel URL
+  "https://trustndrive.netlify.app", // IMPORTANT: Replace with your live Netlify/Vercel URL
 ];
 
 const corsOptions = {
