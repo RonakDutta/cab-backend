@@ -67,7 +67,7 @@ Your TrustnDrive booking has been confirmed. Please review the details below.
 
 Booking Summary:
 - Pickup Location: ${pickup}
-- Duration: ${duration}
+- Duration: ${duration == 1 ? duration + "hr" : duration + "hrs"}
 
 To finalize your ride, please complete the payment using the link below or by entering the UPI ID in your payment app.
 UPI Link: ${upiLink}
@@ -83,7 +83,7 @@ Your TrustnDrive booking has been confirmed. Please review the details below.
 
 Booking Summary:
 - Pickup Location: ${pickup}
-- Duration: ${duration}
+- Duration: ${duration == 1 ? duration + "hr" : duration + "hrs"}
 
 Payment Method: Pay with Cash
 Please have the payment ready for your driver upon trip completion.
@@ -155,7 +155,7 @@ app.post("/api/incoming-message", async (req, res) => {
       await client.messages.create({
         from: `whatsapp:${twilioPhoneNumber}`,
         to: customerNumber,
-        body: `${driverReply}`,
+        body: `${"Message from your driver : " + driverReply}`,
       });
       console.log(`Message forwarded to ${customerNumber}`);
     } else {
