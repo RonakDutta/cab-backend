@@ -27,7 +27,7 @@ let activeRide = null;
 const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:5173",
-  "https://trustndrive.netlify.app", // IMPORTANT: Replace with your live Netlify/Vercel URL
+  "https://safarsaathii.netlify.app", // IMPORTANT: Replace with your live Netlify/Vercel URL
 ];
 
 const corsOptions = {
@@ -59,11 +59,11 @@ app.post("/api/book-ride", async (req, res) => {
     const upiId = process.env.YOUR_UPI_ID || "your-upi-id@okhdfcbank";
 
     if (paymentMethod === "Online") {
-      const upiLink = `upi://pay?pa=${upiId}&pn=TrustnDrive&cu=INR`;
+      const upiLink = `upi://pay?pa=${upiId}&pn=SafarSaathi&cu=INR`;
       customerMessageBody = `
 Dear ${name},
 
-Your TrustnDrive booking has been confirmed. Please review the details below.
+Your SafarSaathi booking has been confirmed. Please review the details below.
 
 Booking Summary:
 - Pickup Location: ${pickup}
@@ -73,13 +73,13 @@ To finalize your ride, please complete the payment using the link below or by en
 UPI Link: ${upiLink}
 UPI ID: ${upiId}
 
-A driver will be assigned to you shortly. Thank you for choosing TrustnDrive.
+A driver will be assigned to you shortly. Thank you for choosing SafarSaathi.
       `;
     } else {
       customerMessageBody = `
 Dear ${name},
 
-Your TrustnDrive booking has been confirmed. Please review the details below.
+Your SafarSaathi booking has been confirmed. Please review the details below.
 
 Booking Summary:
 - Pickup Location: ${pickup}
@@ -88,7 +88,7 @@ Booking Summary:
 Payment Method: Pay with Cash
 Please have the payment ready for your driver upon trip completion.
 
-A driver is being assigned and will arrive at your location shortly. Thank you for choosing TrustnDrive.
+A driver is being assigned and will arrive at your location shortly. Thank you for choosing SafarSaathi.
       `;
     }
 
