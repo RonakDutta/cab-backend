@@ -160,7 +160,7 @@ app.post("/api/incoming-message", async (req, res) => {
       console.log(`Message forwarded to ${customerNumber}`);
     } else {
       console.log(
-        `Could not find an active ride for driver ${driverNumber}. Ignoring message.`
+        `Could not find an active ride for driver ${driverNumber}. Ignoring message.`,
       );
     }
   } catch (error) {
